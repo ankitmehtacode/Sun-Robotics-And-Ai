@@ -1,0 +1,174 @@
+import { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import { ChevronDown, Menu, X } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+
+const Navigation = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  return (
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+      isScrolled 
+        ? 'bg-background/80 backdrop-blur-xl border-b border-border/50' 
+        : 'bg-transparent'
+    }`}>
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center space-x-2">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-glow rounded-lg flex items-center justify-center">
+              <span className="text-primary-foreground font-bold text-lg">S</span>
+            </div>
+            <div>
+              <h1 className="text-xl font-bold text-foreground">Sun Robotics</h1>
+              <p className="text-xs text-muted-foreground">& AI</p>
+            </div>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <button 
+              onClick={() => scrollToSection('hero')}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Home
+            </button>
+            
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center text-foreground hover:text-primary transition-colors">
+                Robotics <ChevronDown className="ml-1 h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="glass-card border-border/50">
+                <DropdownMenuItem onClick={() => scrollToSection('industrial')}>
+                  Industrial Robots
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => scrollToSection('multipurpose')}>
+                  Multipurpose Robots
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => scrollToSection('ai-brain')}>
+                  AI Intelligence
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <button 
+              onClick={() => scrollToSection('it-solutions')}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              IT Solutions
+            </button>
+            
+            <button 
+              onClick={() => scrollToSection('showcase')}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Products
+            </button>
+            
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Contact
+            </button>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Button 
+              variant="ghost" 
+              onClick={() => scrollToSection('demo')}
+              className="text-foreground hover:text-primary hover:bg-primary/10"
+            >
+              Demo
+            </Button>
+            <Button 
+              onClick={() => scrollToSection('contact')}
+              className="btn-hero text-foreground hover:text-primary-foreground"
+            >
+              Get Started
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden text-foreground hover:text-primary transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-4 glass-card rounded-lg p-6">
+            <div className="flex flex-col space-y-4">
+              <button 
+                onClick={() => scrollToSection('hero')}
+                className="text-left text-foreground hover:text-primary transition-colors"
+              >
+                Home
+              </button>
+              <button 
+                onClick={() => scrollToSection('industrial')}
+                className="text-left text-foreground hover:text-primary transition-colors"
+              >
+                Industrial Robots
+              </button>
+              <button 
+                onClick={() => scrollToSection('multipurpose')}
+                className="text-left text-foreground hover:text-primary transition-colors"
+              >
+                Multipurpose Robots
+              </button>
+              <button 
+                onClick={() => scrollToSection('it-solutions')}
+                className="text-left text-foreground hover:text-primary transition-colors"
+              >
+                IT Solutions
+              </button>
+              <button 
+                onClick={() => scrollToSection('showcase')}
+                className="text-left text-foreground hover:text-primary transition-colors"
+              >
+                Products
+              </button>
+              <div className="pt-4 border-t border-border/50">
+                <Button 
+                  onClick={() => scrollToSection('contact')}
+                  className="w-full btn-hero text-foreground hover:text-primary-foreground"
+                >
+                  Get Started
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+};
+
+export default Navigation;
