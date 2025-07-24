@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Brain, Eye, Zap, Network } from 'lucide-react';
-import aiBrainImage from '@/assets/ai-brain.jpg';
+import aiBrainImage from '@/assets/ai-brain-premium.jpg';
 
 const AIBrainSection = () => {
   const [isVisible, setIsVisible] = useState(false);

@@ -29,36 +29,39 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${
       isScrolled 
-        ? 'bg-background/80 backdrop-blur-xl border-b border-border/50' 
+        ? 'nav-glass shadow-2xl' 
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-glow rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">S</span>
+          {/* Premium Logo */}
+          <div className="flex items-center space-x-3 group cursor-pointer">
+            <div className="relative w-12 h-12 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center shadow-glow transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+              <span className="text-primary-foreground font-black text-xl">S</span>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-ultra to-primary rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
             </div>
-            <div>
-              <h1 className="text-xl font-bold text-foreground">Sun Robotics</h1>
-              <p className="text-xs text-muted-foreground">& AI</p>
+            <div className="transition-all duration-500 group-hover:translate-x-1">
+              <h1 className="text-2xl font-black text-foreground bg-gradient-to-r from-foreground to-primary bg-clip-text">Sun Robotics</h1>
+              <p className="text-sm text-primary font-bold tracking-wider">& AI</p>
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Premium */}
+          <div className="hidden md:flex items-center space-x-10">
             <button 
               onClick={() => scrollToSection('hero')}
-              className="text-foreground hover:text-primary transition-colors"
+              className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group"
             >
               Home
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-300 group-hover:w-full"></span>
             </button>
             
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-foreground hover:text-primary transition-colors">
-                Robotics <ChevronDown className="ml-1 h-4 w-4" />
+              <DropdownMenuTrigger className="flex items-center text-foreground hover:text-primary transition-all duration-300 font-medium group">
+                Robotics <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-300 group-hover:w-full"></span>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="glass-card border-border/50">
                 <DropdownMenuItem onClick={() => scrollToSection('industrial')}>
@@ -75,38 +78,41 @@ const Navigation = () => {
 
             <button 
               onClick={() => scrollToSection('it-solutions')}
-              className="text-foreground hover:text-primary transition-colors"
+              className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group"
             >
               IT Solutions
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-300 group-hover:w-full"></span>
             </button>
             
             <button 
               onClick={() => scrollToSection('showcase')}
-              className="text-foreground hover:text-primary transition-colors"
+              className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group"
             >
               Products
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-300 group-hover:w-full"></span>
             </button>
             
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-foreground hover:text-primary transition-colors"
+              className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group"
             >
               Contact
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-300 group-hover:w-full"></span>
             </button>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Premium CTA Buttons */}
+          <div className="hidden md:flex items-center space-x-6">
             <Button 
               variant="ghost" 
               onClick={() => scrollToSection('demo')}
-              className="text-foreground hover:text-primary hover:bg-primary/10"
+              className="text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 font-medium"
             >
               Demo
             </Button>
             <Button 
               onClick={() => scrollToSection('contact')}
-              className="btn-hero text-foreground hover:text-primary-foreground"
+              className="btn-hero text-foreground hover:text-primary-foreground font-semibold px-6 py-2"
             >
               Get Started
             </Button>

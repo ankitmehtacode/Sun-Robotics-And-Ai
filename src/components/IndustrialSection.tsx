@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Zap, Shield, Clock, Wrench } from 'lucide-react';
-import industrialImage from '@/assets/industrial-robot.jpg';
+import industrialImage from '@/assets/industrial-robot-premium.jpg';
 
 const IndustrialSection = () => {
   const [isVisible, setIsVisible] = useState(false);
