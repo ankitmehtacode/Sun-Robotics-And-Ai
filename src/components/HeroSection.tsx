@@ -59,13 +59,11 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
         <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          {/* Ultra-premium Headline */}
-          <h1 className="text-hero text-7xl md:text-9xl lg:text-[12rem] mb-8 leading-none">
-            Engineering
+          {/* Minimalistic Headline */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight font-light tracking-tight">
+            Engineering Tomorrow's
             <br />
-            Tomorrow's
-            <br />
-            <span className="text-glow animate-scale-in">Intelligence</span>
+            <span className="text-glow font-normal">Intelligence</span>
           </h1>
 
           {/* Enhanced Subheadline */}
