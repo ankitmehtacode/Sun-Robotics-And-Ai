@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X, Send } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -110,8 +110,9 @@ const Navigation = () => {
             </Button>
             <Button 
               onClick={() => scrollToSection('contact')}
-              className="btn-hero text-foreground hover:text-primary-foreground font-semibold px-6 py-2"
+              className="btn-hero text-foreground hover:text-primary-foreground font-semibold px-6 py-2 group"
             >
+              <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               Get Started
             </Button>
           </div>
@@ -162,8 +163,9 @@ const Navigation = () => {
               <div className="pt-4 border-t border-border/50">
                 <Button 
                   onClick={() => scrollToSection('contact')}
-                  className="w-full btn-hero text-foreground hover:text-primary-foreground"
+                  className="w-full btn-hero text-foreground hover:text-primary-foreground group"
                 >
+                  <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   Get Started
                 </Button>
               </div>
