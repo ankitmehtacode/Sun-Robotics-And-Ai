@@ -30,9 +30,9 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-[100] transition-all duration-700 ${
+    <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
       isScrolled 
-        ? 'nav-glass shadow-2xl' 
+        ? 'bg-background/95 backdrop-blur-md border-b border-border/20 shadow-xl' 
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-6 py-4">
@@ -42,7 +42,7 @@ const Navigation = () => {
             <img 
               src={logo} 
               alt="Sun Robotics & AI" 
-              className="h-12 w-auto transition-all duration-500 group-hover:scale-110"
+              className="h-14 w-auto transition-all duration-300 group-hover:scale-105 drop-shadow-lg"
             />
           </div>
 
