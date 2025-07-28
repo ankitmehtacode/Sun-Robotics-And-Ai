@@ -82,47 +82,68 @@ const HeroSection = () => {
               Explore Demo
             </Button>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="btn-hero border-primary/40 text-xl px-12 py-8 group"
-                >
-                  Products
-                  <ChevronDown className="ml-3 h-6 w-6 group-hover:rotate-180 transition-transform duration-500" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="glass-card border-border/50 min-w-64">
-                <DropdownMenuItem 
-                  onClick={() => scrollToSection('industrial')}
-                  className="text-base py-3 hover:bg-primary/10"
-                >
-                  <div>
-                    <div className="font-semibold">Industrial Robotics</div>
-                    <div className="text-sm text-muted-foreground">Heavy-duty automation</div>
+            <div className="group relative">
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="btn-hero border-primary/40 text-xl px-12 py-8 group"
+              >
+                Products
+                <ChevronDown className="ml-3 h-6 w-6 group-hover:rotate-180 transition-transform duration-500" />
+              </Button>
+              
+              {/* Hover Dropdown */}
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div className="bg-background/95 backdrop-blur-md border border-border/20 rounded-2xl shadow-2xl min-w-80 p-6">
+                  <div className="space-y-4">
+                    <div 
+                      onClick={() => scrollToSection('industrial')}
+                      className="group/item cursor-pointer p-4 rounded-xl hover:bg-primary/10 transition-all duration-300"
+                    >
+                      <div className="flex items-center space-x-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-glow rounded-lg flex items-center justify-center">
+                          <span className="text-primary-foreground font-bold">🏭</span>
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-semibold text-lg group-hover/item:text-primary transition-colors">Industrial Robotics</div>
+                          <div className="text-muted-foreground">Heavy-duty automation solutions</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div 
+                      onClick={() => scrollToSection('multipurpose')}
+                      className="group/item cursor-pointer p-4 rounded-xl hover:bg-primary/10 transition-all duration-300"
+                    >
+                      <div className="flex items-center space-x-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-glow rounded-lg flex items-center justify-center">
+                          <span className="text-primary-foreground font-bold">🤖</span>
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-semibold text-lg group-hover/item:text-primary transition-colors">Multipurpose Robots</div>
+                          <div className="text-muted-foreground">Adaptive intelligent solutions</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div 
+                      onClick={() => scrollToSection('ai-brain')}
+                      className="group/item cursor-pointer p-4 rounded-xl hover:bg-primary/10 transition-all duration-300"
+                    >
+                      <div className="flex items-center space-x-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-glow rounded-lg flex items-center justify-center">
+                          <span className="text-primary-foreground font-bold">🧠</span>
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-semibold text-lg group-hover/item:text-primary transition-colors">AI Intelligence</div>
+                          <div className="text-muted-foreground">Advanced neural networks</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </DropdownMenuItem>
-                <DropdownMenuItem 
-                  onClick={() => scrollToSection('multipurpose')}
-                  className="text-base py-3 hover:bg-primary/10"
-                >
-                  <div>
-                    <div className="font-semibold">Multipurpose Robots</div>
-                    <div className="text-sm text-muted-foreground">Adaptive solutions</div>
-                  </div>
-                </DropdownMenuItem>
-                <DropdownMenuItem 
-                  onClick={() => scrollToSection('ai-brain')}
-                  className="text-base py-3 hover:bg-primary/10"
-                >
-                  <div>
-                    <div className="font-semibold">AI Intelligence</div>
-                    <div className="text-sm text-muted-foreground">Neural networks</div>
-                  </div>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                </div>
+              </div>
+            </div>
 
             <Button 
               variant="ghost" 
