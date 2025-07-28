@@ -7,6 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import logo from '@/assets/sun-robotics-logo.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,16 +37,13 @@ const Navigation = () => {
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Premium Logo */}
-          <div className="flex items-center space-x-3 group cursor-pointer">
-            <div className="relative w-12 h-12 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center shadow-glow transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-              <span className="text-primary-foreground font-black text-xl">S</span>
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-ultra to-primary rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-            </div>
-            <div className="transition-all duration-500 group-hover:translate-x-1">
-              <h1 className="text-2xl font-black text-foreground bg-gradient-to-r from-foreground to-primary bg-clip-text">Sun Robotics</h1>
-              <p className="text-sm text-primary font-bold tracking-wider">& AI</p>
-            </div>
+          {/* Logo */}
+          <div className="flex items-center group cursor-pointer">
+            <img 
+              src={logo} 
+              alt="Sun Robotics & AI" 
+              className="h-12 w-auto transition-all duration-500 group-hover:scale-110"
+            />
           </div>
 
           {/* Desktop Navigation - Premium */}
