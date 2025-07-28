@@ -29,7 +29,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${
+    <nav className={`fixed top-0 w-full z-[100] transition-all duration-700 ${
       isScrolled 
         ? 'nav-glass shadow-2xl' 
         : 'bg-transparent'
