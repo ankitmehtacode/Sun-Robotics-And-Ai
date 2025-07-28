@@ -4,7 +4,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { ArrowRight, Rocket, Cog, Mail, Phone, MapPin } from 'lucide-react';
-
 const CTASection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
@@ -14,81 +13,71 @@ const CTASection = () => {
     message: ''
   });
   const sectionRef = useRef<HTMLElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+      }
+    }, {
+      threshold: 0.3
+    });
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-
     return () => observer.disconnect();
   }, []);
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
     }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
     console.log('Form submitted:', formData);
   };
-
   const scrollToDemo = () => {
     const element = document.getElementById('showcase');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
   const scrollToIT = () => {
     const element = document.getElementById('it-solutions');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section 
-      id="contact" 
-      ref={sectionRef}
-      className="relative py-20 overflow-hidden"
-    >
+  return <section id="contact" ref={sectionRef} className="relative py-20 overflow-hidden">
       {/* Cinematic Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/20 to-background">
         {/* Animated tech grid */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-            backgroundImage: `
+          backgroundImage: `
               linear-gradient(90deg, hsl(195, 100%, 50%) 1px, transparent 1px),
               linear-gradient(0deg, hsl(195, 100%, 50%) 1px, transparent 1px)
             `,
-            backgroundSize: '50px 50px',
-            animation: 'pulse 8s ease-in-out infinite'
-          }}></div>
+          backgroundSize: '50px 50px',
+          animation: 'pulse 8s ease-in-out infinite'
+        }}></div>
         </div>
         
         {/* Floating orbs */}
         <div className="absolute top-20 left-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" style={{
+        animationDelay: '3s'
+      }}></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-6">
         {/* Main CTA Header */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-6xl md:text-8xl font-bold mb-6">
             <span className="text-hero">Let's Build the</span>
             <br />
@@ -101,21 +90,12 @@ const CTASection = () => {
 
           {/* Primary CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-            <Button 
-              size="lg"
-              onClick={scrollToDemo}
-              className="btn-hero text-lg px-12 py-6 group"
-            >
+            <Button size="lg" onClick={scrollToDemo} className="btn-hero text-lg px-12 py-6 group">
               <Rocket className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
               Book a Robotics Demo
             </Button>
 
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={scrollToIT}
-              className="btn-hero border-primary/30 text-lg px-12 py-6 group"
-            >
+            <Button variant="outline" size="lg" onClick={scrollToIT} className="btn-hero border-primary/30 text-lg px-12 py-6 group">
               <Cog className="mr-2 h-5 w-5 group-hover:rotate-45 transition-transform" />
               Explore IT Services
             </Button>
@@ -125,55 +105,24 @@ const CTASection = () => {
         {/* Contact Form & Info Grid */}
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <Card className={`glass-card border-border/30 transition-all duration-1000 delay-300 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-          }`}>
+          <Card className={`glass-card border-border/30 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-6 text-foreground">Get in Touch</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <Input
-                      name="name"
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="bg-secondary/20 border-border/50 focus:border-primary"
-                    />
+                    <Input name="name" placeholder="Your Name" value={formData.name} onChange={handleInputChange} className="bg-secondary/20 border-border/50 focus:border-primary" />
                   </div>
                   <div>
-                    <Input
-                      name="email"
-                      type="email"
-                      placeholder="Email Address"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="bg-secondary/20 border-border/50 focus:border-primary"
-                    />
+                    <Input name="email" type="email" placeholder="Email Address" value={formData.email} onChange={handleInputChange} className="bg-secondary/20 border-border/50 focus:border-primary" />
                   </div>
                 </div>
                 
-                <Input
-                  name="company"
-                  placeholder="Company Name"
-                  value={formData.company}
-                  onChange={handleInputChange}
-                  className="bg-secondary/20 border-border/50 focus:border-primary"
-                />
+                <Input name="company" placeholder="Company Name" value={formData.company} onChange={handleInputChange} className="bg-secondary/20 border-border/50 focus:border-primary" />
                 
-                <Textarea
-                  name="message"
-                  placeholder="Tell us about your project or requirements..."
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  className="bg-secondary/20 border-border/50 focus:border-primary resize-none"
-                />
+                <Textarea name="message" placeholder="Tell us about your project or requirements..." rows={4} value={formData.message} onChange={handleInputChange} className="bg-secondary/20 border-border/50 focus:border-primary resize-none" />
 
-                <Button 
-                  type="submit" 
-                  className="w-full btn-hero group"
-                >
+                <Button type="submit" className="w-full btn-hero group">
                   Send Message
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
@@ -182,9 +131,7 @@ const CTASection = () => {
           </Card>
 
           {/* Contact Information */}
-          <div className={`transition-all duration-1000 delay-500 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-          }`}>
+          <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <h3 className="text-2xl font-bold mb-8 text-foreground">Contact Information</h3>
             
             <div className="space-y-6 mb-8">
@@ -207,7 +154,7 @@ const CTASection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Phone</h4>
-                    <p className="text-foreground/70">+1 (555) 123-ROBOT</p>
+                    <p className="text-foreground/70">+91 8249581682</p>
                   </div>
                 </CardContent>
               </Card>
@@ -219,7 +166,7 @@ const CTASection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Location</h4>
-                    <p className="text-foreground/70">San Francisco, CA</p>
+                    <p className="text-foreground/70">Indraprastha Tower,Rau Indore</p>
                   </div>
                 </CardContent>
               </Card>
@@ -245,9 +192,7 @@ const CTASection = () => {
         </div>
 
         {/* Footer */}
-        <div className={`text-center mt-16 pt-8 border-t border-border/30 transition-all duration-1000 delay-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <div className={`text-center mt-16 pt-8 border-t border-border/30 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="flex items-center justify-center space-x-2 mb-4">
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary-glow rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-bold">S</span>
@@ -261,8 +206,6 @@ const CTASection = () => {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CTASection;
