@@ -59,37 +59,6 @@ const HeroSection = () => {
               <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
               Explore Demo
             </Button>
-
-            <div className="group relative">
-              <Button variant="ghost" size="lg" className="text-xl px-12 py-8 group hover:bg-primary/10 font-medium">
-                IT Solutions
-                <ChevronDown className="ml-3 h-6 w-6 group-hover:rotate-180 transition-transform duration-300" />
-              </Button>
-
-              {/* Hover Dropdown - Above Button */}
-              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div className="bg-background/95 backdrop-blur-md border border-border/20 rounded-2xl shadow-2xl min-w-80 p-6">
-                  <div className="space-y-3">
-                    <div onClick={() => scrollToSection('it-solutions')} className="group/item cursor-pointer p-3 rounded-lg hover:bg-primary/10 transition-all duration-300">
-                      <div className="font-medium text-foreground group-hover/item:text-primary transition-colors">Web Development</div>
-                      <div className="text-sm text-muted-foreground">Modern web applications</div>
-                    </div>
-                    <div onClick={() => scrollToSection('it-solutions')} className="group/item cursor-pointer p-3 rounded-lg hover:bg-primary/10 transition-all duration-300">
-                      <div className="font-medium text-foreground group-hover/item:text-primary transition-colors">AI Agents</div>
-                      <div className="text-sm text-muted-foreground">Intelligent automation systems</div>
-                    </div>
-                    <div onClick={() => scrollToSection('it-solutions')} className="group/item cursor-pointer p-3 rounded-lg hover:bg-primary/10 transition-all duration-300">
-                      <div className="font-medium text-foreground group-hover/item:text-primary transition-colors">AI Chatbots</div>
-                      <div className="text-sm text-muted-foreground">Conversational AI solutions</div>
-                    </div>
-                    <div onClick={() => scrollToSection('it-solutions')} className="group/item cursor-pointer p-3 rounded-lg hover:bg-primary/10 transition-all duration-300">
-                      <div className="font-medium text-foreground group-hover/item:text-primary transition-colors">Other Services</div>
-                      <div className="text-sm text-muted-foreground">Custom technology solutions</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Ultra-premium Stats */}
