@@ -59,6 +59,14 @@ const HeroSection = () => {
               <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform" />
               Explore Demo
             </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              onClick={() => scrollToSection('contact')} 
+              className="sm:hidden text-lg px-8 py-6 w-full max-w-xs border-primary/30 text-primary hover:bg-primary/10"
+            >
+              Contact Us
+            </Button>
           </div>
 
           {/* Ultra-premium Stats */}

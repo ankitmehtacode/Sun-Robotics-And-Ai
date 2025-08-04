@@ -46,39 +46,32 @@ const Navigation = () => {
             />
           </div>
 
-          {/* Mobile Navigation Bar - Always Visible */}
-          <div className="flex md:hidden items-center space-x-3 overflow-x-auto">
+          {/* Mobile Navigation Bar - Simple Layout */}
+          <div className="flex md:hidden items-center space-x-2">
             <button 
               onClick={() => scrollToSection('hero')}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1"
+              className="text-xs font-medium text-foreground hover:text-primary transition-colors px-2 py-1"
             >
               Home
             </button>
             <button 
               onClick={() => scrollToSection('industrial')}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1"
+              className="text-xs font-medium text-foreground hover:text-primary transition-colors px-2 py-1"
             >
               Robotics
             </button>
             <button 
               onClick={() => scrollToSection('it-solutions')}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1"
+              className="text-xs font-medium text-foreground hover:text-primary transition-colors px-2 py-1"
             >
               IT
             </button>
             <button 
               onClick={() => scrollToSection('showcase')}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1"
+              className="text-xs font-medium text-foreground hover:text-primary transition-colors px-2 py-1"
             >
               Products
             </button>
-            <Button 
-              onClick={() => scrollToSection('contact')}
-              size="sm"
-              className="btn-hero text-xs px-3 py-1 whitespace-nowrap"
-            >
-              Contact
-            </Button>
           </div>
 
           {/* Desktop Navigation - Premium */}
