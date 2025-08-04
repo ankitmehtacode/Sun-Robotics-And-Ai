@@ -142,7 +142,7 @@ const CTASection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Email</h4>
-                    <p className="text-foreground/70">contact@sunrobotics.ai</p>
+                    <p className="text-foreground/70">sunroboticsandai@gmail.com</p>
                   </div>
                 </CardContent>
               </Card>
@@ -154,7 +154,7 @@ const CTASection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Phone</h4>
-                    <p className="text-foreground/70">+91 8249581682</p>
+                    <p className="text-foreground/70">+91 8144426440</p>
                   </div>
                 </CardContent>
               </Card>

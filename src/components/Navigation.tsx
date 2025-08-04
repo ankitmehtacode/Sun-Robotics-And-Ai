@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import logo from '@/assets/sun-robotics-logo.png';
+import logo from '@/assets/sun-robotics-logo-transparent.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
