@@ -35,15 +35,50 @@ const Navigation = () => {
         ? 'bg-background/95 backdrop-blur-md border-b border-border/20 shadow-xl' 
         : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center group cursor-pointer">
             <img 
               src={logo} 
               alt="Sun Robotics & AI" 
-              className="h-14 w-auto transition-all duration-300 group-hover:scale-105 drop-shadow-lg"
+              className="h-10 sm:h-14 w-auto transition-all duration-300 group-hover:scale-105 drop-shadow-lg"
             />
+          </div>
+
+          {/* Mobile Navigation Bar - Always Visible */}
+          <div className="flex md:hidden items-center space-x-3 overflow-x-auto">
+            <button 
+              onClick={() => scrollToSection('hero')}
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1"
+            >
+              Home
+            </button>
+            <button 
+              onClick={() => scrollToSection('industrial')}
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1"
+            >
+              Robotics
+            </button>
+            <button 
+              onClick={() => scrollToSection('it-solutions')}
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1"
+            >
+              IT
+            </button>
+            <button 
+              onClick={() => scrollToSection('showcase')}
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1"
+            >
+              Products
+            </button>
+            <Button 
+              onClick={() => scrollToSection('contact')}
+              size="sm"
+              className="btn-hero text-xs px-3 py-1 whitespace-nowrap"
+            >
+              Contact
+            </Button>
           </div>
 
           {/* Desktop Navigation - Premium */}
@@ -116,62 +151,7 @@ const Navigation = () => {
               Get Started
             </Button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-foreground hover:text-primary transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 glass-card rounded-lg p-6">
-            <div className="flex flex-col space-y-4">
-              <button 
-                onClick={() => scrollToSection('hero')}
-                className="text-left text-foreground hover:text-primary transition-colors"
-              >
-                Home
-              </button>
-              <button 
-                onClick={() => scrollToSection('industrial')}
-                className="text-left text-foreground hover:text-primary transition-colors"
-              >
-                Industrial Robots
-              </button>
-              <button 
-                onClick={() => scrollToSection('multipurpose')}
-                className="text-left text-foreground hover:text-primary transition-colors"
-              >
-                Multipurpose Robots
-              </button>
-              <button 
-                onClick={() => scrollToSection('it-solutions')}
-                className="text-left text-foreground hover:text-primary transition-colors"
-              >
-                IT Solutions
-              </button>
-              <button 
-                onClick={() => scrollToSection('showcase')}
-                className="text-left text-foreground hover:text-primary transition-colors"
-              >
-                Products
-              </button>
-              <div className="pt-4 border-t border-border/50">
-                <Button 
-                  onClick={() => scrollToSection('contact')}
-                  className="w-full btn-hero text-foreground hover:text-primary-foreground group"
-                >
-                  <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  Get Started
-                </Button>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </nav>
   );
