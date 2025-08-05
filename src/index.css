@@ -165,6 +165,19 @@
   
   html {
     scroll-behavior: smooth;
+    /* Enhanced scroll performance */
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-top: 80px;
+  }
+  
+  /* Performance optimizations for smoother scrolling */
+  *, *::before, *::after {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
   }
 }
 
@@ -268,16 +281,18 @@
     border-color: hsl(195, 100%, 55%, 0.4);
   }
   
-  /* Enhanced scroll animations */
+  /* Enhanced scroll animations with GPU acceleration */
   .scroll-reveal {
     opacity: 0;
-    transform: translateY(60px);
+    transform: translate3d(0, 60px, 0);
     transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, opacity;
   }
   
   .scroll-reveal.revealed {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
+    will-change: auto;
   }
   
   /* Ultra-cinematic video overlay */

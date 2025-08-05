@@ -11,7 +11,7 @@ import CTASection from '@/components/CTASection';
 
 const Index = () => {
   useEffect(() => {
-    // Add scroll reveal functionality
+    // Optimized scroll reveal functionality with performance improvements
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -20,12 +20,18 @@ const Index = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
+          // Use requestAnimationFrame for smoother animations
+          requestAnimationFrame(() => {
+            entry.target.classList.add('revealed');
+          });
+          // Stop observing once revealed to improve performance
+          observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
 
-    const scrollElements = document.querySelectorAll('.scroll-reveal');
+    // Use more efficient selector and reduce DOM queries
+    const scrollElements = document.querySelectorAll('.scroll-reveal:not(.revealed)');
     scrollElements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
