@@ -202,7 +202,7 @@ const CTASection = () => {
             </div>
           </div>
           <p className="text-foreground/60">
-            © 2024 Sun Robotics & AI. Engineering Tomorrow's Intelligence.
+            Copyright © Zonrobotics Pvt. Ltd. All Rights Reserved.
           </p>
         </div>
       </div>
