@@ -16,7 +16,8 @@ const HeroSection = () => {
       });
     }
   };
-  return <section id="hero" className="fixed inset-0 flex items-center justify-center overflow-hidden z-0">
+  return <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+>
       {/* Ultra-cinematic Background */}
       <div className="absolute inset-0">
         <img src={heroImage} alt="Advanced robotics laboratory" className="w-full h-full object-cover scale-110 transition-transform duration-20000" />
