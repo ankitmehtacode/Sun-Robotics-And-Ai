@@ -42,13 +42,15 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       <HeroSection />
-      <IndustrialSection />
-      <MultipurposeSection />
-      <AIBrainSection />
-      <ITSolutionsSection />
-      <ProductShowcase />
-      <TestimonialsSection />
-      <CTASection />
+      <div className="relative z-10 bg-background" style={{ marginTop: '100vh' }}>
+        <IndustrialSection />
+        <MultipurposeSection />
+        <AIBrainSection />
+        <ITSolutionsSection />
+        <ProductShowcase />
+        <TestimonialsSection />
+        <CTASection />
+      </div>
       <BackToTop />
     </div>
   );
