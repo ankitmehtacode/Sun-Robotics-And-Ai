@@ -8,13 +8,14 @@ import ITSolutionsSection from '@/components/ITSolutionsSection';
 import ProductShowcase from '@/components/ProductShowcase';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import CTASection from '@/components/CTASection';
+import BackToTop from '@/components/BackToTop';
 
 const Index = () => {
   useEffect(() => {
     // Optimized scroll reveal functionality with performance improvements
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.05,
+      rootMargin: '0px 0px 50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -48,6 +49,7 @@ const Index = () => {
       <ProductShowcase />
       <TestimonialsSection />
       <CTASection />
+      <BackToTop />
     </div>
   );
 };

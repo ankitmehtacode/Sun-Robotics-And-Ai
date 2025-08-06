@@ -281,11 +281,11 @@
     border-color: hsl(195, 100%, 55%, 0.4);
   }
   
-  /* Enhanced scroll animations with GPU acceleration */
+  /* Enhanced scroll animations with GPU acceleration - smoother transitions */
   .scroll-reveal {
-    opacity: 0;
-    transform: translate3d(0, 60px, 0);
-    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0.3;
+    transform: translate3d(0, 40px, 0);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: transform, opacity;
   }
   

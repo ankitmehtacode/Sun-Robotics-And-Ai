@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Zap, Shield, Clock, Wrench } from 'lucide-react';
-import industrialImage from '@/assets/industrial-robot-premium.jpg';
+import industrialImage from '@/assets/industrial-robot-hd.jpg';
 
 const IndustrialSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -80,7 +80,7 @@ const IndustrialSection = () => {
             <span className="text-glow">Unmatched Uptime.</span>
           </h2>
 
-          <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
+          <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
             Transform your manufacturing with AI-powered industrial robots that deliver 
             precision, reliability, and efficiency at unprecedented scales.
           </p>

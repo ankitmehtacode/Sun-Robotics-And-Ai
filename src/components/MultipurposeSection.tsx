@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Package, Camera, Navigation, Cpu } from 'lucide-react';
-import multipurposeImage from '@/assets/multipurpose-robot.jpg';
+import multipurposeImage from '@/assets/multipurpose-robot-hd.jpg';
 
 const MultipurposeSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -108,29 +108,29 @@ const MultipurposeSection = () => {
             <span className="text-glow">Endless Potential.</span>
           </h2>
 
-          <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
+          <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
             Adaptive robots that learn, evolve, and excel across multiple domains. 
             From delivery to inspection, our AI systems redefine versatility.
           </p>
 
-          {/* Capabilities Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+          {/* Simplified Capabilities - removed excessive cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
             {capabilities.map((capability, index) => (
-              <Card 
+              <div 
                 key={index}
-                className={`glass-card border-border/30 transition-all duration-700 delay-${(index + 1) * 100} hover:scale-105 ${
+                className={`flex items-start space-x-4 transition-all duration-700 delay-${(index + 1) * 100} ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                 }`}
               >
-                <CardContent className="p-4 text-center">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <capability.icon className="h-6 w-6 text-primary" />
-                  </div>
+                <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <capability.icon className="h-5 w-5 text-primary" />
+                </div>
+                <div>
                   <h3 className="font-semibold mb-1 text-foreground">{capability.title}</h3>
-                  <p className="text-sm text-foreground/70 mb-2">{capability.description}</p>
-                  <div className="text-primary font-bold">{capability.metric}</div>
-                </CardContent>
-              </Card>
+                  <p className="text-sm text-foreground/70 mb-1">{capability.description}</p>
+                  <div className="text-primary font-semibold text-sm">{capability.metric}</div>
+                </div>
+              </div>
             ))}
           </div>
 

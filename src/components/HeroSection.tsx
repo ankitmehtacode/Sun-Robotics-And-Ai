@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Play, ArrowRight } from 'lucide-react';
-import heroImage from '@/assets/hero-robot-lab-premium.jpg';
+import heroImage from '@/assets/hero-robot-lab-hd.jpg';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 const HeroSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -49,7 +49,7 @@ const HeroSection = () => {
           </h1>
 
           {/* Enhanced Subheadline */}
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground/90 mb-8 sm:mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed font-light px-2 sm:px-0">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground/80 mb-8 sm:mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed font-light px-2 sm:px-0">
             Robotics and IT solutions that power the future of intelligent automation
           </p>
 
@@ -69,19 +69,19 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Ultra-premium Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-5xl mx-auto px-2 sm:px-0">
-            <div className="glass-card p-6 sm:p-8 text-center group hover:scale-105 transition-all duration-500">
-              <div className="text-4xl sm:text-5xl font-black text-primary mb-3 sm:mb-4 group-hover:animate-glow">500+</div>
-              <div className="text-foreground/80 text-base sm:text-lg font-medium">Robots Deployed</div>
+          {/* Simplified Stats - removed excessive shapes */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 max-w-4xl mx-auto px-2 sm:px-0">
+            <div className="text-center group">
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2 group-hover:animate-glow transition-all">500+</div>
+              <div className="text-foreground/70 text-sm sm:text-base">Robots Deployed</div>
             </div>
-            <div className="glass-card p-6 sm:p-8 text-center group hover:scale-105 transition-all duration-500">
-              <div className="text-4xl sm:text-5xl font-black text-primary mb-3 sm:mb-4 group-hover:animate-glow">99.9%</div>
-              <div className="text-foreground/80 text-base sm:text-lg font-medium">Uptime Guarantee</div>
+            <div className="text-center group">
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2 group-hover:animate-glow transition-all">99.9%</div>
+              <div className="text-foreground/70 text-sm sm:text-base">Uptime Guarantee</div>
             </div>
-            <div className="glass-card p-6 sm:p-8 text-center group hover:scale-105 transition-all duration-500">
-              <div className="text-4xl sm:text-5xl font-black text-primary mb-3 sm:mb-4 group-hover:animate-glow">24/7</div>
-              <div className="text-foreground/80 text-base sm:text-lg font-medium">AI Monitoring</div>
+            <div className="text-center group">
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2 group-hover:animate-glow transition-all">24/7</div>
+              <div className="text-foreground/70 text-sm sm:text-base">AI Monitoring</div>
             </div>
           </div>
         </div>

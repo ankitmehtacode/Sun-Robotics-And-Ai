@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Brain, Eye, Zap, Network } from 'lucide-react';
-import aiBrainImage from '@/assets/ai-brain-premium.jpg';
+import aiBrainImage from '@/assets/ai-brain-hd.jpg';
 
 const AIBrainSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -149,7 +149,7 @@ const AIBrainSection = () => {
             <span className="text-glow">Learn in Real Time</span>
           </h2>
 
-          <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
+          <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
             Our advanced neural networks enable robots to perceive, understand, 
             and adapt to their environment with human-like intelligence and beyond.
           </p>
