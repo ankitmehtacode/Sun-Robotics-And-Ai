@@ -53,7 +53,8 @@ const CTASection = () => {
       });
     }
   };
-  return <section id="contact" ref={sectionRef} className="relative py-20 overflow-hidden">
+  return (
+    <section id="contact" ref={sectionRef} className="relative py-20 overflow-hidden">
       {/* Cinematic Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/20 to-background">
         {/* Animated tech grid */}
@@ -206,6 +207,8 @@ const CTASection = () => {
           </p>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default CTASection;

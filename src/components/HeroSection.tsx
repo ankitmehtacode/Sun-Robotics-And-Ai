@@ -16,7 +16,8 @@ const HeroSection = () => {
       });
     }
   };
-  return <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+  return (
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
 >
       {/* Ultra-cinematic Background */}
       <div className="absolute inset-0">
@@ -95,6 +96,8 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
