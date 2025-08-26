@@ -1,8 +1,7 @@
 [[redirects]]
   from = "/*"
-  to = "https://www.sunroboticsandai.in/:splat"
-  status = 301
-  force = true
+  to = "index.html"
+  status = 200
 
 [[headers]]
   for = "/*"
