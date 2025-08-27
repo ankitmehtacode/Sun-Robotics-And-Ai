@@ -39,7 +39,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center group cursor-pointer">
-           <img 
+            <img 
               src={logo} 
               alt="Sun Robotics & AI" 
               className="h-12 sm:h-16 w-auto transition-all duration-300 group-hover:scale-105 drop-shadow-lg"
