@@ -28,6 +28,6 @@ export default defineConfig(({ mode }) => ({
       },
     },
   },
-  base: "./",   // ✅ Fix: ensures assets load correctly on Netlify
+  base: "/",   // ✅ Fix: required for Netlify deployment
 }));
 
