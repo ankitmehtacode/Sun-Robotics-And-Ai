@@ -8,6 +8,11 @@ export default {
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
 	],
+	theme: {
+    extend: {
+      fontFamily: {
+        body: ['Inter', 'system-ui', 'sans-serif'],
+      },
 	prefix: "",
 	theme: {
 		container: {
