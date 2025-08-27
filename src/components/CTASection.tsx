@@ -193,22 +193,33 @@ import logo from '@assets/Picsart_25-08-26_16-14-15-746_1756278077916.png';
         </div>
 
         {/* Footer */}
+                {/* Footer */}
         <div className={`text-center mt-16 pt-8 border-t border-border/30 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary-glow rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold">S</span>
-            </div>
+          <div className="flex items-center justify-center space-x-3 mb-6">
+            <img 
+              src={logo} 
+              alt="Sun Robotics & AI" 
+              className="h-10 w-auto transition-all duration-300 hover:scale-105 drop-shadow-lg"
+            />
             <div>
               <span className="text-xl font-bold text-foreground">Sun Robotics & AI</span>
             </div>
           </div>
+          
+          {/* Social Links */}
+          <div className="flex items-center justify-center space-x-4 mb-4">
+            <a 
+              href="https://www.linkedin.com/company/sunroboticsandai/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 text-foreground/70 hover:text-primary transition-colors duration-300 group"
+            >
+              <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
+              <span className="text-sm">LinkedIn</span>
+            </a>
+          </div>
+          
           <p className="text-foreground/60">
             Copyright © Zonrobotics Pvt. Ltd. All Rights Reserved.
           </p>
         </div>
-      </div>
-    </section>
-  );
-};
-
-export default CTASection;
