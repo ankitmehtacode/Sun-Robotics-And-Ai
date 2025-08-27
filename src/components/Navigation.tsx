@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import logo from '@/assets/sun-robotics-logo-final.png';
+import logo from '@assets/Picsart_25-08-26_16-14-15-746_1756278077916.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,10 +39,10 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center group cursor-pointer">
-            <img 
+           <img 
               src={logo} 
               alt="Sun Robotics & AI" 
-              className="h-10 sm:h-14 w-auto transition-all duration-300 group-hover:scale-105 drop-shadow-lg"
+              className="h-12 sm:h-16 w-auto transition-all duration-300 group-hover:scale-105 drop-shadow-lg"
             />
           </div>
 
