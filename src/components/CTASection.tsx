@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { ArrowRight, Rocket, Cog, Mail, Phone, MapPin } from 'lucide-react';
-const CTASection = () => {
+import { ArrowRight, Rocket, Cog, Mail, Phone, MapPin, Linkedin } from 'lucide-react';
+import logo from '@assets/Picsart_25-08-26_16-14-15-746_1756278077916.png';
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
