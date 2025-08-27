@@ -1,6 +1,10 @@
+[build]
+  publish = "dist/public"
+  command = "npm run build"
+
 [[redirects]]
   from = "/*"
-  to = "index.html"
+  to = "/index.html"
   status = 200
 
 [[headers]]
@@ -9,4 +13,3 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-
