@@ -73,16 +73,12 @@ const HeroSection = () => {
 
           {/* Simplified Stats - removed excessive shapes */}
           {/* Key Metrics */}
-<div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 max-w-3xl mx-auto px-2 sm:px-0">
-  <div className="text-center group">
-    <div className="text-3xl sm:text-4xl font-bold text-primary mb-2 group-hover:animate-glow transition-all">99.9%</div>
-    <div className="text-foreground/70 text-sm sm:text-base">Uptime Guarantee</div>
-  </div>
-  <div className="text-center group">
-    <div className="text-3xl sm:text-4xl font-bold text-primary mb-2 group-hover:animate-glow transition-all">24/7</div>
-    <div className="text-foreground/70 text-sm sm:text-base">AI Monitoring</div>
-  </div>
-</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 max-w-3xl mx-auto px-2 sm:px-0">
+            <div className="text-center group">
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2 group-hover:animate-glow transition-all">99.9%</div>
+              <div className="text-foreground/70 text-sm sm:text-base">Uptime Guarantee</div>
+            </div>
+            <div className="text-center group">
               <div className="text-3xl sm:text-4xl font-bold text-primary mb-2 group-hover:animate-glow transition-all">24/7</div>
               <div className="text-foreground/70 text-sm sm:text-base">AI Monitoring</div>
             </div>

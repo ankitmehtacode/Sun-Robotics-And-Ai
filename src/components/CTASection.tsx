@@ -4,7 +4,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { ArrowRight, Rocket, Cog, Mail, Phone, MapPin, Linkedin } from 'lucide-react';
-import logo from '@assets/Picsart_25-08-26_16-14-15-746_1756278077916.png';
+import logo from '@/assets/Picsart_25-08-26_16-14-15-746.png';
+
+const CTASection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -223,3 +225,9 @@ import logo from '@assets/Picsart_25-08-26_16-14-15-746_1756278077916.png';
             Copyright © Zonrobotics Pvt. Ltd. All Rights Reserved.
           </p>
         </div>
+      </div>
+    </section>
+  );
+};
+
+export default CTASection;
