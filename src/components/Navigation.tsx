@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import logo from '@assets/Picsart_25-08-26_16-14-15-746_1756278077916.png';
+import logo from '@/assets/Picsart_25-08-26_16-14-15-746.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);

@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { ArrowRight, Rocket, Cog, Mail, Phone, MapPin, Linkedin } from 'lucide-react';
-import logo from '@/assets/sun-robotics-logo.png';
+import logo from '@/assets/Picsart_25-08-26_16-14-15-746.png';
 
 const CTASection = () => {
   const [isVisible, setIsVisible] = useState(false);
