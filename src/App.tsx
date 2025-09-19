@@ -7,10 +7,6 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Test from "./pages/Test";
 
-console.log('App.tsx loaded');
-console.log('Index component:', Index);
-console.log('NotFound component:', NotFound);
-
 const queryClient = new QueryClient();
 
 const App = () => (
