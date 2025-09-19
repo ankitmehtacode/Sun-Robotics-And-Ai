@@ -1,10 +1,10 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, memo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { ArrowRight, Rocket, Cog, Mail, Phone, MapPin, Linkedin } from 'lucide-react';
-import logo from '@/assets/Picsart_25-08-26_16-14-15-746.png';
+import logo from '../assets/Picsart_25-08-26_16-14-15-746.png';
 
 const CTASection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,7 +37,7 @@ const CTASection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Form submitted:', formData);
+    // console.log('Form submitted:', formData);
   };
   const scrollToDemo = () => {
     const element = document.getElementById('showcase');
@@ -230,4 +230,4 @@ const CTASection = () => {
   );
 };
 
-export default CTASection;
+export default memo(CTASection);
