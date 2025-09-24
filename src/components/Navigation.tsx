@@ -31,42 +31,42 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
-      isScrolled 
-        ? 'bg-background/95 backdrop-blur-md border-b border-border/20 shadow-xl' 
+      isScrolled
+        ? 'bg-background/95 backdrop-blur-md border-b border-border/20 shadow-xl'
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center group cursor-pointer">
-            <img 
-              src={logo} 
-              alt="Sun Robotics & AI" 
+            <img
+              src={logo}
+              alt="Sun Robotics & AI"
               className="h-12 sm:h-16 w-auto transition-all duration-300 group-hover:scale-105 drop-shadow-lg"
             />
           </div>
 
           {/* Mobile Navigation Bar - Simple Layout */}
           <div className="flex md:hidden items-center space-x-2">
-            <button 
+            <button
               onClick={() => scrollToSection('hero')}
               className="text-xs font-medium text-foreground hover:text-primary transition-colors px-2 py-1"
             >
               Home
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection('industrial')}
               className="text-xs font-medium text-foreground hover:text-primary transition-colors px-2 py-1"
             >
               Robotics
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection('it-solutions')}
               className="text-xs font-medium text-foreground hover:text-primary transition-colors px-2 py-1"
             >
               IT
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection('showcase')}
               className="text-xs font-medium text-foreground hover:text-primary transition-colors px-2 py-1"
             >
@@ -76,14 +76,14 @@ const Navigation = () => {
 
           {/* Desktop Navigation - Premium */}
           <div className="hidden md:flex items-center space-x-10">
-            <button 
+            <button
               onClick={() => scrollToSection('hero')}
               className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group"
             >
               Home
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-300 group-hover:w-full"></span>
             </button>
-            
+
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center text-foreground hover:text-primary transition-all duration-300 font-medium group">
                 Robotics <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
@@ -102,41 +102,49 @@ const Navigation = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <button 
+            <button
               onClick={() => scrollToSection('it-solutions')}
               className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group"
             >
               IT Solutions
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-300 group-hover:w-full"></span>
             </button>
-            
-            <button 
+
+            <button
               onClick={() => scrollToSection('showcase')}
               className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group"
             >
               Products
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-300 group-hover:w-full"></span>
             </button>
-            
-            <button 
+
+            <button
               onClick={() => scrollToSection('contact')}
               className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group"
             >
               Contact
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-300 group-hover:w-full"></span>
             </button>
+
+            <Button
+              variant="ghost"
+              onClick={() => window.alert('Login functionality not yet implemented.')}
+              className="text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 font-medium"
+            >
+              Login
+            </Button>
           </div>
 
           {/* Premium CTA Buttons */}
           <div className="hidden md:flex items-center space-x-6">
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               onClick={() => scrollToSection('demo')}
               className="text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 font-medium"
             >
               Demo
             </Button>
-            <Button 
+            <Button
               onClick={() => scrollToSection('contact')}
               className="btn-hero text-foreground hover:text-primary-foreground font-semibold px-6 py-2 group"
             >
